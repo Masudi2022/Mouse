@@ -1,0 +1,68 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squad</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+        a {
+            color: blue;
+        }
+        #ctn {
+            background-color: mediumseagreen;
+            height: 150px;
+            width: 100px;
+            border-radius:10px;
+            padding: 5px;
+            margin: 5px;
+        }
+        #ed {
+            width: 110px;
+            height: 120px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        #tit {
+            margin: 10px;
+        }
+        .player {
+            width: 120px;
+            height: 200px;
+            background-color: mediumseagreen;
+            border-radius: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+        .pp {
+            float: left;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h1>Squad</h1>
+    <a href="{% url 'home'%}">Home</a>
+    <hr>
+    <div class="pp">
+        {% for m in members%}
+        <!-- <div class="player"></div> -->
+        
+            <div class="player">
+                <img id="ed" src="{% static 'image/images.jpeg'%}" alt="ederson">
+                <a href="bio/{{m.id}}"><small>{{m.firstname}} {{m.lastname}}</small></a> <br>
+                <br>
+                {{m.position}}
+            </div>
+    
+        {% endfor %}
+    </div>
+
+    <br>
+    
+   
+</body>
+</html>

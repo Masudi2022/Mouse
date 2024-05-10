@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biography</title>
+    <style>
+        body {
+            background-color: rgb(171, 225, 196);
+        }
+    </style>
+    <style>
+        table, th, td {
+            text-align: left;
+            padding: 5px;
+            padding: 3px;
+        }
+        .container {
+            width:fit-content;
+            height: fit-content;
+            box-shadow: 0px 4px 4px 7px gray;
+            padding: 30px;
+            border-radius: 20px;
+        }
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'image/images.jpeg'%}"  alt="ederson">
+        <h3>{{staff.firstname}}  {{staff.lastname}}</h3>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td>{{staff.firstname}} {{staff.lastname}}</td>
+            </tr>
+            <hr id="devide">
+            <tr>
+                <th>Nationality</th>
+                <td>{{staff.nationality}}</td>
+            </tr>
+            <tr>
+                <th><p>Salary</th>
+                <td>{{staff.salary}}</td>
+            </tr>
+            <tr>
+                <th>Value: </th>
+                <td>{{staff.value}}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{staff.age}}</td>
+            </tr>
+            <tr>
+                <th>Strength</th>
+                <td>{{staff.strength}}</td>
+            </tr>
+        </table>
+    </div>
+    <br>  
+   <a href="{% url 'squad'%}">squad</a> 
+</body>
+</html>

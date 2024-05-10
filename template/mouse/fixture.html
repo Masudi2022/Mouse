@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixture</title>
+    <style>
+        body {
+            background-color: rgb(171, 225, 196);
+        }
+        .fixture-box {
+            width: 100%;
+            height: fit-content;
+            background-color: white;
+            margin-left: 5px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px 2px gray;
+        }
+        #fixture-content {
+            margin-left: 10px;
+            padding-top: 5px;
+        }
+        #dtv {
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fixture</h1>
+    <hr>
+    
+        {% for f in fixture %}
+        <div class="fixture-box">
+            <h3 id="fixture-content">{{f.home_team}} VS {{f.away_team}}</h3>
+            <p id="dtv"><strong>Date</strong>:{{f.date}}</p>
+            <p id="dtv"><strong>Time</strong>:{{f.time}}</p>
+            <p id="dtv"><strong>Stadium</strong>: {{f.venue}}</p>
+        </div>
+        {% endfor%}
+   
+    <br>
+    <a href="{% url 'home'%}">Home</a>
+</body>
+</html>

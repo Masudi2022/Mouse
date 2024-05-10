@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(171, 225, 196);
+        }
+        .home-container {
+            display: grid;
+            grid-template-columns:3fr 1fr;
+           
+        }
+        .container {
+            border-radius: 10px;
+        }
+        .one {
+            border-radius: 5px;
+            height: 100px;
+            margin: 10px 0px 5px 0px;
+            background-color: white;
+        }
+        .two {
+            border-radius: 5px;
+            height: 150px;
+            margin: 10px 0px 5px 0px;
+            background-color: white;
+        }
+        .three {
+            border-radius: 5px;
+            height: 150px;
+            background-color: white;
+            margin: 10px 0px 5px 0px;
+        }
+        .four {
+            border-radius: 5px;
+            height: 150px;
+            background-color: white;
+            margin: 10px 0px 5px 0px;
+        }
+        .side {
+            margin-left: 15px;
+        }
+        #logo {
+            width: 100px;
+            height: 100px;
+        }
+        button {
+            width: 100px;
+            height: 30px;
+            border-radius: 15px;
+        }
+        #diff {
+            height: 2px;
+            background-color: mediumseagreen;
+        }
+        .logo-class {
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+        }
+        #lin {
+            color: black;
+        }
+        .content {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        #inbox-word {
+            margin-top: 10px;
+        }
+        .info {
+            width: 100%;
+            height: 100px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px 2px gray; 
+            
+        }
+        #info-content {
+            padding-left: 5px;
+            
+        }
+        table, th, td {
+            text-align: left;
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-class">
+        <img id="logo" src="{% static 'image/logo.jpeg'%}">
+    </div>
+    
+    <h3 class="logo-class">The Mouse</h3>
+    <div class="menu" >
+        <button id=""><a id="lin" href="{% url 'kits'%}">Kits</a></button>
+        <button><a id="lin" href="{% url 'fixture'%}">Fixture</a></button>
+        <button><a id="lin" href="{% url 'squad'%}">Squad</a></button>
+        <button><a  id="lin" href="{% url 'contact'%}">contact</a></button>
+        <button><a id="lin" href="{% url 'about'%}">About us</a></button>
+    </div>
+    <hr id="diff">
+    <div class="home-container">
+            <div class="New">
+                    {% for news in new %}
+                    <div class="info">
+                        <h3 id="info-content">{{news.title}}</h3>
+                        <p id="info-content">{{news.body}}</p>
+                    </div>
+                    
+                    {%endfor%}
+            </div>
+            
+        <div class="side">
+        <hr>
+            <table>
+                <caption>Standing</caption>
+                <tr>
+                    <th>Team</th>                        <th>W</th>
+                    <th>D</th>
+                    <th>L</th>
+                    <th>P</th>
+                </tr>
+                    {% for stand in standing%}
+                <tr>
+                    <th>
+                        {{stand.team.name}}
+                    </th>
+                        
+                    <td>{{stand.win}}</td>
+                    <td>{{stand.draw}}</td>
+                    <td>{{stand.loose}}</td>
+                    <td>{{stand.points}}</td>
+                </tr>
+                    {% endfor %}
+            </table>            
+        </div>
+    </div>
+</body>
+</html>

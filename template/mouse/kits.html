@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kits</title>
+    <style>
+        body {
+            background-color: rgb(171, 225, 196);
+        }
+        #jersey {
+            width: 300px;
+            height: 500px;
+            padding: 20px;
+        }
+        .j-box {
+            height: fit-content;
+            width: fit-content;
+            padding: 2px;
+            box-shadow: 0px 2px 2px 2px gray;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .j-box1 {
+            height: fit-content;
+            width: fit-content;
+            padding: 2px;
+            box-shadow: 0px 2px 2px 2px gray;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .j-box2 {
+            height: fit-content;
+            width: fit-content;
+            padding: 2px;
+            box-shadow: 0px 2px 2px 2px gray;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        #sale {
+            text-align: center;
+        }
+        hr {
+            height: 3px;
+            margin-left: 5px;
+            margin-right: 5px;
+            background-color:rgb(3, 67, 33) ;
+        }
+        .kits {
+            float: left;
+            display: flex;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>New season kits</h1>
+    <a href="{% url 'home'%}">Home</a>
+    <hr>
+    <div class="kits" >
+        <div class="j-box">
+            <img id="jersey" src="{% static 'image/jersey2.jpeg' %}">
+            <hr>
+            <p id="sale"><del>100,000</del></p>
+            <p id="sale">80,000</p>  
+        </div>
+        <div class="j-box1">
+            <img id="jersey" src="{% static 'image/jersey.jpeg' %}">
+            <hr>
+            <p id="sale"><del>100,000</del></p>
+            <p id="sale">90,000</p>  
+        </div>
+        <div class="j-box2">
+            <img id="jersey" src="{% static 'image/jerseyy.jpeg' %}">
+            <hr>
+            <p id="sale"><del>100,000</del></p>
+            <p id="sale">90,000</p>  
+        </div>
+    </div>
+    <br>
+    
+</body>
+
+</html>
