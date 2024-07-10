@@ -1,0 +1,13 @@
+.drawer-container {
+    width: 250px;
+  }
+  
+  .drawer-container .MuiList-root {
+    padding: 0;
+  }
+  
+  .drawer-container .MuiListItem-root {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  

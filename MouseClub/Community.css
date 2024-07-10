@@ -1,0 +1,48 @@
+/* Community.css */
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .main-community {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/community.jpeg'); /* Path to your image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .com-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .com-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .com-btn a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .com-btn a:hover {
+    color: #ddd;
+  }
+  
